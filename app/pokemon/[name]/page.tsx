@@ -1,3 +1,4 @@
+"use client";
 async function getPokemon(name: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`);
   const data = await res.json();

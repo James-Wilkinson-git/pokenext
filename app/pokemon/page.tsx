@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./page.module.scss";
 
 async function getPokemons() {
   //This will cache by deafult because of Next add cache: no-store to fetch to refetch each load
@@ -11,16 +12,16 @@ export default async function PokemonsPage() {
   const pokemon = await getPokemons();
   return (
     <div>
-      Pokemon List
-      <ul>
+      <h1> First 150 Pokemon</h1>
+      <div className={styles.pokeList}>
         {pokemon?.map((pokemon: any) => {
           return (
-            <li key={pokemon.name}>
+            <div className={styles.pokemonEntry} key={pokemon.name}>
               <Link href={`pokemon/${pokemon.name}`}>{pokemon.name}</Link>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }
