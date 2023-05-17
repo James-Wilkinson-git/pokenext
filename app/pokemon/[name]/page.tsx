@@ -10,7 +10,7 @@ export default async function PokemonPage({ params }: any) {
   const pokemon = await getPokemon(params.name);
   return (
     <div>
-      <Image src={pokemon.sprites.front_default} alt={pokemon.name} />
+      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
     </div>
   );
 }
