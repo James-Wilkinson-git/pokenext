@@ -1,0 +1,18 @@
+.pokeList {
+  width: 100%;
+  margin: 0 auto;
+}
+.pokemonEntry a {
+  width: 150px;
+  height: 150px;
+  float: left;
+  background: #fafafa;
+  margin: 6px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: aliceblue;
+  }
+}

@@ -1,4 +1,5 @@
-"use client";
+import Image from "next/image";
+
 async function getPokemon(name: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`);
   const data = await res.json();
@@ -9,7 +10,7 @@ export default async function PokemonPage({ params }: any) {
   const pokemon = await getPokemon(params.name);
   return (
     <div>
-      <img src={pokemon.sprites.front_default} alt="" />
+      <Image src={pokemon.sprites.front_default} alt={pokemon.name} />
     </div>
   );
 }
